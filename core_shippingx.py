@@ -20,6 +20,7 @@ def get_xi_data(url):
 
 
 def alert(url, params):
+    """sends sms alert"""
     try:
         headers = {'Content-type': 'application/json; charset=utf-8'}
         r = requests.post(url, json=params, headers=headers)
