@@ -25,7 +25,7 @@ def alert(url, params):
         headers = {'Content-type': 'application/json; charset=utf-8'}
         r = requests.post(url, json=params, headers=headers)
         
-    catch Exception as e:
+    except Exception as e:
         print(e)
         return False
     return True
@@ -89,6 +89,7 @@ for site_id in cluster['site']:
                     "message": msgx
                 }
                 alert("http://sms-api.hismalawi.org/v1/sms/send", params)
+                
 
             # close the while loop
             count = 3
@@ -107,6 +108,7 @@ for site_id in cluster['site']:
                         "message": msg
                     }
                     alert("http://sms-api.hismalawi.org/v1/sms/send", params)
+                    
 
         
 
